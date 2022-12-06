@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+***MVP***
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[x] Make website title and favicon editable from data.js
 
-## Available Scripts
+[x] Make sure all text/content is in component data, nothing in component js files
 
-In the project directory, you can run:
+[x] Change 'gallery' to 'testimonials'
 
-### `npm start`
+[x] Adjust some layout to my liking (service cards, contact spacing)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[x] Move page styles to index.css, link appropriately
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[x] Stylize components and move away from App.css *done except for media queries*
 
-### `npm test`
+[x] Map widget in contact 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[x] Option for picture adjacent in the About component
 
-### `npm run build`
+[x] Make 'services' have click to expand info
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    [x] Handle click event on <h3> or <i> elements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    [x] Restyle .details-box to accomodate text/img side by side
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[ ] Testimonials carousel component
 
-### `npm run eject`
+[ ] CTA button/contact form component
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[ ] Make media stops for screen scaling
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    [ ] Tablet @1008
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    [ ] Mobile @640
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[ ] Module for adding font resources from data.js
 
-## Learn More
+[ ] Fix section #ids to match values from data.headerData.linklist
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+***Roadmap***
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Useability:
 
-### Code Splitting
+[ ] Light/Dark/Medium theme selector
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Components to add:
 
-### Analyzing the Bundle Size
+[ ] Weather widget? (may be cool for location-based businesses)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[ ] Gallery component for displaying customer work
 
-### Making a Progressive Web App
+[ ] Testimonial carousel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[ ] CTA button w/ pop-out info request form
