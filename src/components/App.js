@@ -7,6 +7,7 @@ import About from "./About";
 import Testimonials from "./Testimonials";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import ImgText from './ImgText';
 import { docData } from "../data/data";
 
 function App() {
@@ -25,10 +26,11 @@ function App() {
       <Header />
       <Top />
       <About />
-      <SpacerImage />
       <Services />
+      <SpacerImage />
       {/* <Testimonials /> */}
-      <Contact />
+      <ImgText />
+      {/* <Contact /> */}
       <Footer />
     </div>
   );

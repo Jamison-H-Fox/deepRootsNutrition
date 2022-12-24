@@ -26,7 +26,7 @@ const StyledFooter = styled.footer`
 
     & a {
         color: #fff;
-        margin: 0 10% 0 10%;
+
         &:hover{
             color: #4f4f4f;
         }
@@ -36,7 +36,7 @@ const StyledFooter = styled.footer`
 
         & .social {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             margin-top: 10%;
         }
     }
@@ -58,7 +58,7 @@ const StyledFooter = styled.footer`
         }
 
         & a {
-            margin 2% 0;
+            margin: 2% 0;
             text-decoration: none;
         }
     
