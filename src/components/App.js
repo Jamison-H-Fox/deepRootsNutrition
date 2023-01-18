@@ -27,10 +27,7 @@ function App() {
       <Top />
       <About />
       <Services />
-      <SpacerImage />
-      {/* <Testimonials /> */}
       <ImgText />
-      {/* <Contact /> */}
       <Footer />
     </div>
   );

@@ -69,7 +69,7 @@ export const contactData = {
 
 export const footerData = {
     socialGreeting: 'Connect with us on social media',
-    socialLinks: ["http://instagram.com","http://facebook.com"],
+    socialLinks: ["https://www.instagram.com/deep.roots.nutrition/","http://facebook.com"],
     socialIcons: [<i className="fa-brands fa-instagram"></i>,<i className="fa-brands fa-square-facebook"></i>],
     linkList: [...headerData.linkList],
     copyright: '© silverFox Design 2022'
