@@ -1,5 +1,4 @@
 import React from "react";
-import { aboutData } from "../data/data";
 import styled from "styled-components";
 import { brandPallet } from "../data/data";
 
@@ -14,7 +13,6 @@ const StyledSection = styled.section`
     & .image {
         width: 25%;
         margin-left: 2.5%;
-        background-image: url('${aboutData.about_Image}');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -31,11 +29,9 @@ const StyledSection = styled.section`
         & p {
             margin: 2.5% 0 2.5% 0;
             text-align: left;
-            font-family: ${brandPallet.secondaryFont};
         }
 
         & h2 {
-            font-family: ${brandPallet.primaryFont};
             margin-bottom: 2.5%;
         }
 
@@ -46,23 +42,23 @@ const StyledSection = styled.section`
     }
 `
 
-function About() {
-    const contentArray = aboutData.content.split('&!&')
+function TextImg(props) {
+    const contentArray = props.data.content.split('&!&')
     
     return (
-        <StyledSection id="about">
+        <StyledSection id={props.data.id}>
             <div className="text">
-                {aboutData.icon}                
-                <h2>{aboutData.header}</h2>
+                <i className={props.data.icon}></i>
+                <h2>{props.data.header}</h2>
                 {contentArray.map((string, index) => {
                     return (<p key={index}>{string}</p>)
                 })}
             </div>
-            <div className="image">
+            <div className="image" style={{backgroundImage:`url(${props.data.image})`}}>
 
             </div>
         </StyledSection>
     )
 }
 
-export default About;
+export default TextImg;

@@ -1,21 +1,20 @@
 import React from "react";
-import { spacerImgageData } from '../data/data'
 import styled from "styled-components";
+import { brandPallet } from "../data/data";
 
 const StyledSection = styled.section`
     height: 40vh;
-    background-image: url('${spacerImgageData.spacerImgage_URL}');
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;
 `
 
-function SpacerImage() {
+function SpacerImage(props) {
 
 
     return (
-        <StyledSection className="spacer-image">
+        <StyledSection className="spacer-image" id={props.data.id} style={{backgroundImage:`url(${props.data.image})`}}>
 
         </StyledSection>
     )

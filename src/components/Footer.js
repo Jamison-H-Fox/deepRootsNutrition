@@ -1,5 +1,4 @@
 import React from "react";
-import { footerData } from '../data/data'
 import styled from "styled-components";
 import { brandPallet } from "../data/data";
 
@@ -72,31 +71,31 @@ const StyledFooter = styled.footer`
 `
 
 
-function Footer() {
+function Footer(props) {
 
 
     return (
-        <StyledFooter>
+        <StyledFooter id={props.data.id}>
             <div className="social-container">
-                <h3>{footerData.socialGreeting}</h3>
+                <h3>{props.data.heading}</h3>
                 <nav className="social">
-                    {footerData.socialLinks.map((element, index) => {
+                    {props.data.links.map((element, index) => {
                         return (
-                            <a key={index} href={element} target='_blank'>{footerData.socialIcons[index]}</a>
+                            <a key={index} href={element} target='_blank'><i className={props.data.icons[index]} key={index}></i></a>
                         )
-                    })}                    
+                    })}
                 </nav>
             </div>
             <div className="bottom-right">
                 <nav className="bottom-links">
-                    {footerData.linkList.map((element, idx) => {
+                    {props.data.linkList.map((element, idx) => {
                         return <a key={idx} href={`#${element.toLowerCase()}`}>{element}</a>
                     })}
                 </nav>
             </div>
             <div className="break"></div>
             <div className="copyright">
-                <p>{footerData.copyright}</p>
+                <p>{props.data.copyright}</p>
             </div>
         </StyledFooter>
     )

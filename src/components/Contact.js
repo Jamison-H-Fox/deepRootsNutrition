@@ -1,27 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { contactData } from '../data/data'
 import { brandPallet } from "../data/data";
 
 const StyledSection = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
+    background-color: ${brandPallet.secondaryColor};
 
     // & * {
     //     border: red 1px solid;
     // }
 
     & h2 {
-        font-family: ${brandPallet.primaryFont};
         width: 100%;
         margin-bottom: 2.5%;
     }
 
     & .left, .right {
-        width: 33%;
+        width: 45%;
         padding: 4% 0;
         display: flex;
         justify-content: center;
@@ -30,20 +28,23 @@ const StyledSection = styled.section`
 
     & .map {
         display: flex;
+        width: 100%;
 
+        & iframe {
+            width: 100%;
+            height: 30vh;
+        }
     }
 
     & .contact-info {
-        width: 85%;
+        width: 90%;
         line-height: 2;
 
         & h3 {
-            font-family: ${brandPallet.primaryFont};
             text-align: left;
         }
 
         & address, a {
-            font-family: ${brandPallet.secondaryFont};
             text-decoration: none;
             color: #4f4f4f;
         }
@@ -57,28 +58,28 @@ const StyledSection = styled.section`
 `
 
 
-function Contact() {
+function Contact(props) {
 
 
     return (
-        <StyledSection id="contact">
-            <h2>{contactData.mainText}</h2>
-            <div className="map">
-                {contactData.mapEmbedCode}
-            </div>
+        <StyledSection id={props.data.id}>
+            <h2>{props.data.mainText}</h2>
             <div className="left">
                 <div className="contact-info">
-                    <h3>{contactData.greeting}</h3>
-                    <address>{contactData.address1}<br/>{contactData.address2}<br/>
-                        <a href={`tel:${contactData.phone}`}>Phone: {contactData.phone}</a><br/>
-                        <a href={`mailto:${contactData.email}`}>Email: {contactData.email}</a>
+                    <h3>{props.data.greeting}</h3>
+                    <address>{props.data.address1}<br/>{props.data.address2}<br/>
+                        <a href={`tel:${props.data.phone}`}>Phone: {props.data.phone}</a><br/>
+                        <a href={`mailto:${props.data.email}`}>Email: {props.data.email}</a>
                     </address>
                 </div>
             </div>
             <div className="right">
                 <div className="img-container">
-                    <img src={contactData.contactImg_URL} alt={contactData.contactImg_alt} />
+                    <img src={props.data.img} alt={props.data.imgAlt} />
                 </div>
+            </div>
+            <div className="map">
+                {props.data.mapEmbedCode}
             </div>
         </StyledSection>
     )

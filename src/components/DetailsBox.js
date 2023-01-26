@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { servicesData } from '../data/data'
 import styled from 'styled-components'
 import { brandPallet } from "../data/data";
 
@@ -9,7 +8,6 @@ const StyledSection = styled.section`
     align-items: center;
 
     & h2 {
-        font-family: ${brandPallet.primaryFont};
         font-size: 4.5rem;
     }
     
@@ -36,7 +34,6 @@ const StyledSection = styled.section`
                 display: flex;
                 justify-content: center;
                 margin: 15% 0 0 0;
-                font-family: ${brandPallet.primaryFont}
             }
         }
     }
@@ -58,10 +55,16 @@ const StyledSection = styled.section`
             width: 100%;
         }
 
+        & h3 {
+            text-decoration: underline;
+            font-weight: bold;
+            margin-bottom: 2.5%;
+        }
+
         & .details-text {
             display: flex;
             flex-direction: column;
-            width: 45%;
+            width: 60%;
             align-self: center;
 
             & p {
@@ -73,7 +76,7 @@ const StyledSection = styled.section`
 
 
         & .details-img {
-            width: 45%;
+            width: 30%;
             align-self: center;
         }
 
@@ -109,42 +112,37 @@ const StyledSection = styled.section`
     }
 
 `
-
-function Services() {
-    const [detailsText, setDetailsText] = useState(['lol','lolz']);
+function DetailsBox(props) {
+    const [detailsText, setDetailsText] = useState([]);
     const [detailsImg, setDetailsImg] = useState('');
+    const [detailsHeader, setDetailsHeader] = useState('');
 
     function hideDetails() {
         const detailsBox = document.getElementById('details-box');
         detailsBox.classList.toggle('hidden');
     };
 
-    function changeText(event) {
-        if (event.nativeEvent.path.length === 9) {
-            const text = servicesData.serviceDetails[event.nativeEvent.srcElement.dataset.index].split('&!&');
-            const img = servicesData.serviceDetailsImg[event.nativeEvent.srcElement.dataset.index];
-            setDetailsText(text);
-            setDetailsImg(img);
-        } else {
-            const text = servicesData.serviceDetails[event.nativeEvent.srcElement.parentElement.dataset.index].split('&!&');
-            const img = servicesData.serviceDetailsImg[event.nativeEvent.srcElement.parentElement.dataset.index];
-            setDetailsText(text);
-            setDetailsImg(img);
-        };                     
+    function changeText(evt) {
+        const text = props.data.text[evt.target.attributes["data-index"].value].split('&!&');
+        const img = props.data.img[evt.target.attributes["data-index"].value];
+        const header = props.data.titles[evt.target.attributes["data-index"].value];
+        setDetailsText(text);
+        setDetailsImg(img);
+        setDetailsHeader(header)
 
         const detailsBox = document.getElementById('details-box');
         if (detailsBox.classList.length === 1) {
             detailsBox.classList.toggle('hidden');
-        }        
+        }
     };
 
 
 
     return (
-        <StyledSection id='services'>
-            <h2>{servicesData.mainText}</h2>
+        <StyledSection id={props.data.id}>
+            <h2>{props.data.mainText}</h2>
             <div className="container">
-                {servicesData.serviceNames.map((element, index) => {
+                {props.data.titles.map((element, index) => {
                     return (
                         <div 
                             onClick={(event) => changeText(event)}
@@ -152,15 +150,15 @@ function Services() {
                             className="box"
                             data-index={index}
                             >
-                            {servicesData.serviceIcons[index]}
-                            <h3>{element}</h3>
+                            <i data-index={index} className={props.data.icons[index]}></i>
+                            <h3 data-index={index}>{element}</h3>
                         </div>
                     )
                 })}
             </div>
             <div className='hidden' id='details-box'>
-                {/* {console.log(detailsText)} */}
                 <div className="details-text">
+                    <h3>{detailsHeader}</h3>
                     {detailsText.map((string, index) => {
                         return <p key={index}>{string}</p>
                     })}
@@ -168,10 +166,10 @@ function Services() {
                 <div className='details-img'><img src={detailsImg}/></div>
                 <i className="fa-solid fa-xmark" onClick={() => hideDetails()}></i>
                 <div className='break'></div>
-                <button>{servicesData.ctaButtonText}</button>
+                <button>{props.data.ctaButtonText}</button>
             </div>
         </StyledSection>
     )
 }
 
-export default Services;
+export default DetailsBox;

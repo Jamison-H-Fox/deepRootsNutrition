@@ -1,11 +1,9 @@
 import React from "react"
-import { topData } from '../data/data'
 import styled from 'styled-components'
 import { brandPallet } from "../data/data"
 
 const StyledSection = styled.section`
     height: 85vh;
-    background-image: url('${topData.topImage_URL}');
     margin-top: 10vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,17 +13,9 @@ const StyledSection = styled.section`
     align-items: center;
 
     & .titles {
-        padding: 1.25%;
-        background-color: rgba(255, 255, 255, 0.5);
+        padding: 2.5%;
+        background-color: rgba(255, 255, 255, 0.75);
         border-radius: 5px;
-
-        & h1 {
-            font-family: ${brandPallet.primaryFont};
-        }
-
-        & h2 {
-            font-family: ${brandPallet.primaryFont};
-        }
 
         & .break1 {
             width: 100%;
@@ -34,22 +24,22 @@ const StyledSection = styled.section`
 
         & .break2 {
             width: 100%;
-            height: 5vh;
+            height: 0.5vh;
         }
     }
 `
 
-function Top() {
-
+function Top(props) {
+    const headerBodyArray = props.data.subHeading.split('&!&');
 
     return (
-        <StyledSection id="home">
+        <StyledSection id={props.data.id} style={{backgroundImage:`url(${props.data.image})`}}>
             <div className="titles">
-                <h1>{topData.mainHeading}</h1>
+                <h1>{props.data.mainHeading}</h1>
                 <div className="break1"></div>
-                <h2>{topData.subHeading1}<br/>
-                <div className="break2"></div>
-                {topData.subHeading2}</h2>
+                {headerBodyArray.map((string, index) => {
+                    return (<h3 key={index}>{string}</h3>)
+                })}
             </div>
         </StyledSection>
     )
