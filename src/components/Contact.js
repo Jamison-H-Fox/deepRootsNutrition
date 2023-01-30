@@ -19,7 +19,6 @@ const StyledSection = styled.section`
     }
 
     & .left, .right {
-        height: 40vh;
         width: 45%;
         padding: 4% 0;
         display: flex;
