@@ -1,9 +1,9 @@
 export const brandPallet = {
     id: '',
-    primaryColor: '#BDB19E',
-    secondaryColor: '#fffdeb',
-    primaryFont: `"PT Sans", sans-serif`,
-    secondaryFont: `"Nunito", sans-serif`,
+    primaryColor: '#bcb19f',
+    secondaryColor: '#f1f0ee',
+    primaryFont: `'Old Standard TT', serif;`,
+    secondaryFont: `'Open Sans', sans-serif;`,
     lightThemeBackground: '#fffafa',
     darkThemeBackground: '#303030',
     boxRadius: '0px',

@@ -8,11 +8,8 @@ const StyledDiv = styled.div`
     align-items: center;
     margin: 0 0 2.5% 0;
 
-    & h1 {
-        margin: 1.25%;
-    }
-
     & h2 {
+        width: 75%;
         margin: 1.25%;
     }
     
@@ -21,14 +18,14 @@ const StyledDiv = styled.div`
     }
 
     & p {
-        width: 50%;
-        margin: 1.25%;
+        width: 66%;
+        margin: 2.5%;
         text-align: center;
     }
 `
 
 function Text(props) {
-    const headerArray = props.data.header.split('&!&')
+    const headerArray = props.data.header.split('&!&');
     const textBodyArray = props.data.body.split('&!&');
 
     return (

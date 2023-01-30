@@ -43,10 +43,10 @@ table {
 
 /* Custom Properties */
 :root {
+  --primary-color: #bcb19f;
+  --secondary-color: #f1f0ee;
   --primary-font: 'Old Standard TT', serif;
   --secondary-font: 'Open Sans', sans-serif;
-  --primary-color: #fdde60;
-  --secondary-color: #fffdeb;
   --light-theme-background: #fffafa;
   --dark-theme-background: #303030;
   --box-radius: 0px;
@@ -78,7 +78,7 @@ h1 {
   font-family: var(--primary-font);
 }
 h2 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-family: var(--primary-font);
 }
 h3 {
@@ -93,4 +93,9 @@ i {
 }
 address {
   font-size: 2.5rem;
+}
+button {
+  font-family: var(--secondary-font);
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
